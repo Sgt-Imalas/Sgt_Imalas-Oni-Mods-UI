@@ -1,0 +1,22 @@
+fileFormatVersion: 2
+guid: e6b17f82e27726a4da1d358c6acd0066
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontNames:
+  - GRAYSTROKE
+  fallbackFontReferences:
+  - {fileID: 12800000, guid: 588490334880b9c46b73f0b021d0f403, type: 3}
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  shouldRoundAdvanceValue: 1
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
