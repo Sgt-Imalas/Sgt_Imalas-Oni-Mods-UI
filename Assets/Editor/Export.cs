@@ -20,6 +20,7 @@ public class Export : Editor
         {"clustergenerationsettingsmanager_menuassets", @"E:\ONIModding\ModsSource\ModsSolution\ClusterTraitGenerationManager\ModAssets\assets\" },
         {"dss_uiassets",                                @"E:\ONIModding\ModsSource\ModsSolution\SetStartDupes\ModAssets\assets\"},
         {"rocketryexpanded_ui_assets",                  @"E:\ONIModding\ModsSource\ModsSolution\Rockets-TinyYetBig\ModAssets\assets\"},
+        {"blueprints_ui",                               @"E:\ONIModding\ModsSource\ModsSolution\BlueprintsV2\ModAssets\assets\"},
     };
 
     static string WIN = Path.Combine(PATH, "windows");
@@ -42,6 +43,9 @@ public class Export : Editor
                 string subpath = bundlePath.Replace(PATH,string.Empty).Replace("\\",string.Empty);
                 string bundlePathSource = Path.Combine(bundlePath, bundle);
                 string bundlePathTarget = Path.Combine(Path.Combine(targetSubPath, subpath),bundle);
+
+                Directory.CreateDirectory(Directory.GetParent(bundlePathTarget).FullName);
+
                 File.Copy(bundlePathSource, bundlePathTarget, true);
             }
         }
