@@ -21,6 +21,8 @@ public class Export : Editor
         {"dss_uiassets",                                @"E:\ONIModding\ModsSource\ModsSolution\SetStartDupes\ModAssets\assets\"},
         {"rocketryexpanded_ui_assets",                  @"E:\ONIModding\ModsSource\ModsSolution\Rockets-TinyYetBig\ModAssets\assets\"},
         {"blueprints_ui",                               @"E:\ONIModding\ModsSource\ModsSolution\BlueprintsV2\ModAssets\assets\"},
+        {"mpm_ui",                               @"E:\ONIModding\ModsSource\ModsSolution\ModProfileManager_Addon\ModAssets\assets\"},
+
     };
 
     static string WIN = Path.Combine(PATH, "windows");
