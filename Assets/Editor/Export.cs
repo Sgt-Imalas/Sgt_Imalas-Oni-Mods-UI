@@ -42,6 +42,7 @@ public class Export : Editor
             if (predefinedPaths.ContainsKey(bundle))
             {
                 string targetSubPath = predefinedPaths[bundle];
+                Debug.Log("copying " + bundle + " to predefined folder: " + targetSubPath);
                 string subpath = bundlePath.Replace(PATH,string.Empty).Replace("\\",string.Empty);
                 string bundlePathSource = Path.Combine(bundlePath, bundle);
                 string bundlePathTarget = Path.Combine(Path.Combine(targetSubPath, subpath),bundle);
