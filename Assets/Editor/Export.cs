@@ -21,7 +21,8 @@ public class Export : Editor
         {"dss_uiassets",                                @"E:\ONIModding\ModsSource\ModsSolution\SetStartDupes\ModAssets\assets\"},
         {"rocketryexpanded_ui_assets",                  @"E:\ONIModding\ModsSource\ModsSolution\Rockets-TinyYetBig\ModAssets\assets\"},
         {"blueprints_ui",                               @"E:\ONIModding\ModsSource\ModsSolution\BlueprintsV2\ModAssets\assets\"},
-        {"mpm_ui",                               @"E:\ONIModding\ModsSource\ModsSolution\ModProfileManager_Addon\ModAssets\assets\"},
+        {"mpm_ui",                                      @"E:\ONIModding\ModsSource\ModsSolution\ModProfileManager_Addon\ModAssets\assets\"},
+        {"customgamesettings_assets",                   @"E:\ONIModding\ModsSource\ModsSolution\CustomGameSettingsModifier\ModAssets\assets\" }
 
     };
 
@@ -29,7 +30,7 @@ public class Export : Editor
     static string MAC = Path.Combine(PATH, "mac");
     static string LINUX = Path.Combine(PATH, "linux");
 
-    [MenuItem("Assets/Windows export")]
+    [MenuItem("OniAssetBundleUtil/Windows export")]
     static void BuildAllAssetBundles2()
     {
         var winBundles = BuildPipeline.BuildAssetBundles(WIN, BuildAssetBundleOptions.ChunkBasedCompression, BuildTarget.StandaloneWindows64);
@@ -54,7 +55,7 @@ public class Export : Editor
         }
     }
 
-    [MenuItem("Assets/Export (all platforms)")]
+    [MenuItem("OniAssetBundleUtil/Export (all platforms)")]
     static void BuildAllAssetBundles()
     {
         Debug.Log("Windows Bundles...");
@@ -139,29 +140,28 @@ public class Export : Editor
         }
     }
 
-    [MenuItem("Assets/Graystroke")]
+    [MenuItem("OniAssetBundleUtil/Graystroke")]
     static void GrayStrokeAdd()
     {
         StrokeMeSomeGray(Selection.activeGameObject, Selection.activeGameObject.name);
     }
 
 
-    [MenuItem("Assets/Convert TMP")]
+    [MenuItem("OniAssetBundleUtil/Convert TMP")]
     static void BuildTMP()
     {
         BuildObject(Selection.activeGameObject, Selection.activeGameObject.name);
     }
-    [MenuItem("Assets/Revert TMP Conversion")]
+    [MenuItem("OniAssetBundleUtil/Convert TMP + Export All")]
+    static void BuildTMPAndExportAll()
+    {
+        BuildObject(Selection.activeGameObject, Selection.activeGameObject.name);
+        BuildAllAssetBundles();
+    }
+    [MenuItem("OniAssetBundleUtil/Revert TMP Conversion")]
     static void UnBuildTMP()
     {
         ReplaceAllText(Selection.activeGameObject);
-    }
-
-    [MenuItem("Assets/Export Selected UI (Convert TMP)")]
-    static void BuildAllAssetBundlesTMP()
-    {
-        BuildObject(Selection.activeGameObject, Selection.activeGameObject.name);
-        BuildBundles();
     }
 
     public static TMP_FontAsset NotoSans => AssetDatabase.LoadAssetAtPath<TMP_FontAsset>("Assets/Fonts/NotoSans-Regular SDF.asset");

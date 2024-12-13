@@ -1,8 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using Newtonsoft.Json;
-
 public class SettingsDialog : MonoBehaviour
 {
     [SerializeField]
@@ -41,12 +39,13 @@ public class SettingsDialog : MonoBehaviour
 
     public string GenerateJson()
     {
-        if(apply) buttonRefs.Add("apply", GetGameObjectPath(apply));
-        if(steam) buttonRefs.Add("steam", GetGameObjectPath(steam));
-        if(close) buttonRefs.Add("close", GetGameObjectPath(close));
-        if(cancel) buttonRefs.Add("cancel", GetGameObjectPath(cancel));
-        if(github) buttonRefs.Add("github", GetGameObjectPath(github));
+        return string.Empty;
+        //if(apply) buttonRefs.Add("apply", GetGameObjectPath(apply));
+        //if(steam) buttonRefs.Add("steam", GetGameObjectPath(steam));
+        //if(close) buttonRefs.Add("close", GetGameObjectPath(close));
+        //if(cancel) buttonRefs.Add("cancel", GetGameObjectPath(cancel));
+        //if(github) buttonRefs.Add("github", GetGameObjectPath(github));
 
-        return JsonConvert.SerializeObject(buttonRefs, Formatting.Indented);
+        //return JsonConvert.SerializeObject(buttonRefs, Formatting.Indented);
     }
 }
