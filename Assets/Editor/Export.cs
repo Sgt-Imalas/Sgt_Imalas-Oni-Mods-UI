@@ -22,7 +22,8 @@ public class Export : Editor
         {"rocketryexpanded_ui_assets",                  @"E:\ONIModding\ModsSource\ModsSolution\Rockets-TinyYetBig\ModAssets\assets\"},
         {"blueprints_ui",                               @"E:\ONIModding\ModsSource\ModsSolution\BlueprintsV2\ModAssets\assets\"},
         {"mpm_ui",                                      @"E:\ONIModding\ModsSource\ModsSolution\ModProfileManager_Addon\ModAssets\assets\"},
-        {"customgamesettings_assets",                   @"E:\ONIModding\ModsSource\ModsSolution\CustomGameSettingsModifier\ModAssets\assets\" }
+        {"customgamesettings_assets",                   @"E:\ONIModding\ModsSource\ModsSolution\CustomGameSettingsModifier\ModAssets\assets\" },
+        {"snowsculptures_assets",                       @"E:\ONIModding\ModsSource\ModsSolution\AkisSnowThings\ModAssets\assets\" },
 
     };
 
