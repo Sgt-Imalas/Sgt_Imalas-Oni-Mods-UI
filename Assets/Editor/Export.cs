@@ -24,7 +24,8 @@ public class Export : Editor
         {"mpm_ui",                                      @"E:\ONIModding\ModsSource\ModsSolution\ModProfileManager_Addon\ModAssets\assets\"},
         {"customgamesettings_assets",                   @"E:\ONIModding\ModsSource\ModsSolution\CustomGameSettingsModifier\ModAssets\assets\" },
         {"snowsculptures_assets",                       @"E:\ONIModding\ModsSource\ModsSolution\AkisSnowThings\ModAssets\assets\" },
-        {"buildingsettingsync_assets",               @"E:\ONIModding\ModsSource\ModsSolution\SettingsSyncGroups\ModAssets\assets\" },
+        {"buildingsettingsync_assets",                  @"E:\ONIModding\ModsSource\ModsSolution\SettingsSyncGroups\ModAssets\assets\" },
+        {"complexfabricatorribbon_assets",              @"E:\ONIModding\ModsSource\ModsSolution\ComplexFabricatorRibbonController\ModAssets\assets\"   }       
 
 	};
 
@@ -74,42 +75,52 @@ public class Export : Editor
     }
 
     [Serializable]
-    public class TMPSettings
-    {
-        [JsonProperty]
-        public bool Skip { get; set; }
+	public class TMPSettings
+	{
+		[JsonProperty]
+		public string Font { get; set; } = "NotoSans-Regular";
 
-        [JsonProperty]
-        public string Font { get; set; } = "NotoSans-Regular";
-        [JsonProperty]
-        public FontStyles FontStyle { get; set; }
-        [JsonProperty]
-        public float FontSize { get; set; }
-        [JsonProperty]
-        public TextAlignmentOptions Alignment { get; set; }
-        [JsonProperty]
-        public int MaxVisibleLines { get; set; }
-        [JsonProperty]
-        public bool EnableWordWrapping { get; set; }
-        [JsonProperty]
-        public bool AutoSizeTextContainer { get; set; }
-        [JsonProperty]
-        public string Content { get; set; }
-        [JsonProperty]
-        public float X { get; set; }
-        [JsonProperty]
-        public float Y { get; set; }
-        [JsonProperty]
-        public float[] Color { get; set; }
-        [JsonProperty]
-        public bool VariableFontSize { get; set; }
-        [JsonProperty]
-        public float VariableFontSizeMaximum { get; set; }
-        [JsonProperty]
-        public float VariableFontSizeMinimum { get; set; }
-    }
+		[JsonProperty]
+		public FontStyles FontStyle { get; set; }
 
-    public static string GetGameObjectPath(GameObject obj, GameObject parent)
+		[JsonProperty]
+		public float FontSize { get; set; }
+
+		[JsonProperty]
+		public TextAlignmentOptions Alignment { get; set; }
+
+		[JsonProperty]
+		public int MaxVisibleLines { get; set; }
+
+		[JsonProperty]
+		public bool EnableWordWrapping { get; set; }
+
+		[JsonProperty]
+		public bool AutoSizeTextContainer { get; set; }
+
+		[JsonProperty]
+		public string Content { get; set; }
+
+		[JsonProperty]
+		public float X { get; set; }
+
+		[JsonProperty]
+		public float Y { get; set; }
+
+		[JsonProperty]
+		public float[] Color { get; set; }
+
+		[JsonProperty]
+		public bool VariableFontSize { get; set; }
+		[JsonProperty]
+		public float VariableFontSizeMaximum { get; set; }
+		[JsonProperty]
+		public float VariableFontSizeMinimum { get; set; }
+		[JsonProperty]
+		public TextOverflowModes Overflow { get; set; }
+	}
+
+	public static string GetGameObjectPath(GameObject obj, GameObject parent)
     {
         string stop = parent.name;
         string prefix = "STRINGS.UI";
@@ -193,6 +204,7 @@ public class Export : Editor
                 LT.text = "";
                 LT.color = new Color(data.Color[0], data.Color[1], data.Color[2]);
                 LT.text = data.Content;
+
                 // alignment isn't carried over instantiation, so it's applied later
                 if (realign)
                 {//
@@ -280,12 +292,12 @@ public class Export : Editor
             settings.X = rect.sizeDelta.x;
             settings.Y = rect.sizeDelta.y;
             settings.Color = tmp.color != null ? new float[] { tmp.color.r, tmp.color.g, tmp.color.b } : new float[] { 1f, 1f, 1f };
-            settings.VariableFontSize = tmp.autoSizeTextContainer;
+            settings.VariableFontSize = tmp.enableAutoSizing;
             settings.VariableFontSizeMinimum = tmp.fontSizeMin;
             settings.VariableFontSizeMaximum = tmp.fontSizeMax;
+            settings.Overflow = tmp.overflowMode != default ? tmp.overflowMode : TextOverflowModes.Overflow;
 
-
-            var textCmp = obj.transform.parent.gameObject.GetComponent<Text>();
+			var textCmp = obj.transform.parent.gameObject.GetComponent<Text>();
 
             if (textCmp == null)
             {
