@@ -25,7 +25,8 @@ public class Export : Editor
         {"customgamesettings_assets",                   @"E:\ONIModding\ModsSource\ModsSolution\CustomGameSettingsModifier\ModAssets\assets\" },
         {"snowsculptures_assets",                       @"E:\ONIModding\ModsSource\ModsSolution\AkisSnowThings\ModAssets\assets\" },
         {"buildingsettingsync_assets",                  @"E:\ONIModding\ModsSource\ModsSolution\SettingsSyncGroups\ModAssets\assets\" },
-        {"complexfabricatorribbon_assets",              @"E:\ONIModding\ModsSource\ModsSolution\ComplexFabricatorRibbonController\ModAssets\assets\"   }       
+        {"complexfabricatorribbon_assets",              @"E:\ONIModding\ModsSource\ModsSolution\ComplexFabricatorRibbonController\ModAssets\assets\"   },
+        {"ronivan_aio",                                 @"E:\ONIModding\ModsSource\ModsSolution\RonivansLegacy_ChemicalProcessing\ModAssets\assets\" }
 
 	};
 
