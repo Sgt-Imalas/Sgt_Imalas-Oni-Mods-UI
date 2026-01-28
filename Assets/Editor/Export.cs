@@ -28,7 +28,8 @@ public class Export : Editor
 		{"complexfabricatorribbon_assets",              @"E:\ONIModding\ModsSource\ModsSolution\ComplexFabricatorRibbonController\ModAssets\assets\"   },
 		{"ronivan_aio",                                 @"E:\ONIModding\ModsSource\ModsSolution\RonivansLegacy_ChemicalProcessing\ModAssets\assets\" },
 		{"forcefieldtile_assets",                       @"E:\ONIModding\ModsSource\ModsSolution\ForceFieldWallTile\ModAssets\assets\" },
-		{"oni_mp_ui_assets",                            @"C:\Users\Admin\source\repos\Oxygen_Not_Included_Multiplayer\ClassLibrary1\ModAssets\assets\" }
+		{"oni_mp_ui_assets",                            @"C:\Users\Admin\source\repos\Oxygen_Not_Included_Multiplayer\ClassLibrary1\ModAssets\assets\" },
+		{"attributescreen_assets",						@"E:\ONIModding\ModsSource\ModsSolution\SkillsInfoScreen\ModAssets\assets\" }
 
 	};
 
